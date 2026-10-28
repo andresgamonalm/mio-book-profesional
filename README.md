@@ -1,75 +1,73 @@
-# Brandformance Book — Andrés Gamonal
+# Book profesional — Andrés Gamonal
 
-One-page profesional con la trayectoria, casos, recursos y datos de contacto de Andrés Gamonal.
+Página única con la trayectoria, los casos, la formación y los datos de contacto de Andrés Gamonal.
+Se publica en **Cloudflare Pages** con la dirección **https://book.gamonal.app**.
+No aparece en Google: está marcada como "no indexar", porque es un enlace que se comparte directamente.
 
-## Estructura
+## Qué hay en el proyecto
 
-```
-.
-├── index.html       ← El book completo (single file, sin dependencias)
-├── README.md        ← Este archivo
-└── .gitignore
-```
+| Archivo o carpeta | Qué es | ¿Lo edito? |
+|---|---|---|
+| `index.html` | El book completo: textos, diseño y funcionamiento | Sí, los textos y enlaces (ver tabla de abajo) |
+| `imagenes/` | Retrato de "Sobre mí", imagen para compartir el enlace e íconos | Solo para reemplazar una imagen (ver notas) |
+| `favicon.ico` | Ícono de la pestaña del navegador | No (archivo técnico) |
+| `_headers` | Configuración de Cloudflare: privacidad y seguridad | No (archivo técnico) |
+| `DECISIONES-VISUALES.md` | Registro de decisiones de diseño vigentes | Solo para consultar o sumar decisiones |
+| `README.md` | Este mapa | — |
 
-Es un archivo HTML único con todo embebido (CSS, JS, SVG inline). Sin frameworks, sin build step, sin `node_modules`. Las únicas referencias externas son:
+## Quiero cambiar X → busco Y
 
-- Google Fonts (Roboto)
-- Imágenes y PDFs alojados en `andresgamonal.com` y subdominios CDN (`cdn-gamonal`, `cdn-cv`, `cdn-liberty-andes`, `cdn-liberty-chile`, `cdn-bbva`, `cdn-santander`)
-- Thumbnails y embeds de YouTube
-- (Ningún tracker, ningún analytics)
+Abre `index.html` y usa Ctrl+F (Cmd+F en Mac) con el texto de la segunda columna.
+Cambia solo lo que está entre las etiquetas, sin tocarlas.
 
-## Cómo lo despliegas
+| Quiero cambiar | Busco |
+|---|---|
+| La píldora de la portada (ciudad y disponibilidad) | `Abierto a reubicación` |
+| El texto de bienvenida | `Bienvenido a mi` |
+| La lámina de certificaciones de la portada | `Certificaciones<br>digitales` |
+| El texto de "Sobre mí" | `Trabajo el marketing` |
+| La foto de "Sobre mí" | `retrato-andres-gamonal` |
+| Una marca o un caso | `CASO 01` … `CASO 06` |
+| Las cifras de resultados de un caso | `TARJETAS DE RESULTADOS` |
+| Formación, certificaciones, gremios o idiomas | `FORMACIÓN Y CREDENCIALES` |
+| El CV (aparece en 3 lugares: menú, barra lateral y cierre) | `CV-Andr` |
+| Correo, WhatsApp o LinkedIn | `mailto:` · `wa.me` · `linkedin.com/in/andresgamonal` |
+| Lo que se ve al compartir el enlace (WhatsApp, LinkedIn) | `og:` (al inicio del archivo) |
 
-Tres opciones, todas gratis:
+## Contenido del book
 
-### 1. GitHub Pages
-1. Sube este repo a GitHub.
-2. Repo → **Settings** → **Pages** → Source: `main` / root.
-3. URL: `https://<usuario>.github.io/<repo>/` en 1–2 minutos.
+1. Menú superior: logo y botón **Descargar CV**, visible en todas las pantallas.
+2. Barra lateral flotante (solo en pantallas muy anchas): WhatsApp, correo, LinkedIn y CV.
+3. Portada en carrusel: bienvenida con video y certificaciones digitales.
+4. Cifras: 15+ años, 6 mercados, 5 compañías y Effie de Bronce.
+5. Disciplinas en cinta móvil.
+6. Sobre mí, con retrato.
+7. Marcas (6) y un caso por marca: resumen, resultados, documentos, videos y audios.
+8. Formación y credenciales: educación, certificaciones, gremios, jurado Effie e idiomas.
+9. Cierre con correo, WhatsApp, LinkedIn y CV.
 
-### 2. Cloudflare Pages
-1. Sube a GitHub.
-2. En Cloudflare Dashboard → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**.
-3. Selecciona el repo. Build settings: deja todo en blanco (es un sitio estático). Build output: `/`.
-4. **Save and Deploy**. URL: `<proyecto>.pages.dev`.
-5. (Opcional) Conecta tu dominio personalizado en Pages → **Custom domains**.
+## Cómo se publica (Cloudflare Pages)
 
-### 3. Netlify / Vercel
-Conectas el repo y ya. Sin configuración. Detectan automáticamente que es estático.
+El repositorio está conectado a Cloudflare Pages. **Cada cambio que llega a la rama `main` se publica solo** en 1 o 2 minutos.
+Eso incluye los cambios hechos con el editor de contenido.
+Para ver la versión nueva, recarga con Ctrl+Shift+R (Cmd+Shift+R en Mac).
 
-## Cómo lo editas
+Configuración inicial (se hace una sola vez, en el panel de Cloudflare):
 
-Es un solo archivo. Abre `index.html` en tu editor favorito. Las secciones están comentadas con `<!-- NAV -->`, `<!-- HERO -->`, `<!-- ABOUT -->`, etc.
+1. **Workers & Pages** → **Create** → pestaña **Pages** → **Connect to Git**.
+2. Elegir el repositorio `mio-book-profesional`.
+3. Production branch: `main` · Framework preset: `None` · Build command: *(vacío)* · Build output directory: `/`.
+4. **Save and Deploy**. Queda en `mio-book-profesional.pages.dev`.
+5. En el proyecto → **Custom domains** → **Set up a custom domain** → `book.gamonal.app`.
 
-Cambios típicos:
+Las otras ramas del repositorio generan una **vista previa** con su propia dirección (`<rama>.mio-book-profesional.pages.dev`), útil para revisar antes de publicar.
 
-- **Disponibilidad** (la píldora del hero "Disponible · Q3 2026") → buscar `Disponible · Q3 2026`
-- **Texto del hero** → buscar "Bienvenido a mi"
-- **Texto del Sobre mí** → buscar "Ejecutivo senior de marketing"
-- **Marcas y casos** → buscar `id="c1"` … `id="c6"`
-- **Certificaciones** (slide 2 del hero) → buscar "Certificaciones digitales 2026"
-- **Email / WhatsApp / LinkedIn / CV** → buscar `mailto:`, `wa.me`, `linkedin.com/in/andresgamonal`, `cdn-cv.andresgamonal.com`
+## Notas
 
-## Contenido incluido
-
-- **Hero slider** con 2 slides: Bienvenida + Certificaciones
-- **Stats**: 15+ años · 6 mercados · 5 compañías · Effie de Bronce
-- **Disciplinas** en marquee: Estrategia, Performance digital, Publicidad masiva, Medios tradicionales, Research, IA, Producción audiovisual
-- **Sobre mí**: bio profesional con Effie 2017
-- **6 marcas**: Somos Radar (2026–), BMI Headquarters (2024–25), Liberty Andes (2020–24), Liberty Chile (2018–20), BBVA Chile (2014–18), Santander Chile (2012–14)
-- **Recursos por caso**: 6 PDFs entregables, 4 PDFs infografías por país, 15 videos YouTube (con modal universal), 9 audios MP3, 1 PDF libro digital
-- **Certificaciones** (Google, LinkedIn, HubSpot)
-- **CV** descargable
-- **Cierre** de búsqueda laboral con CTAs
-
-## Notas técnicas
-
-- Mobile-first responsive
-- Sin difuminados / blur / glassmorphism
-- Paleta Gamonal: navy `#040764`, blue `#1c73cb`, teal `#20b6b6`, yellow `#fce865`, charcoal `#3B3B3B`
-- Tipografía: Roboto (300, 400, 500, 700, 900)
-- Videos abren en modal con `youtube-nocookie.com` (menos restricciones de embed)
-- Íconos de marca con fallback de color + iniciales si la imagen no carga
+- **Reemplazar una imagen de `imagenes/`:** usa un nombre nuevo (por ejemplo `retrato-andres-gamonal-2.webp`) y cámbialo en `index.html`. Los navegadores guardan esas imágenes una semana.
+- **Vista previa al compartir:** WhatsApp y LinkedIn guardan la vista previa varios días. Para refrescarla en LinkedIn usa https://www.linkedin.com/post-inspector/.
+- **Archivos externos:** las imágenes de marcas y casos están en `andresgamonal.com` y los PDF y audios en sus subdominios `cdn-*`. El CV, los certificados y el logo de Radar están en Cloudflare R2 (`pub-…r2.dev`). Los videos se reproducen desde YouTube (`youtube-nocookie.com`).
+- **Diseño:** paleta Gamonal (azul `#040764`, azul secundario `#1C73CB`, turquesa `#20B6B6`, amarillo `#FCE865`, gris `#3B3B3B`) y tipografía Roboto. Las decisiones vigentes están en `DECISIONES-VISUALES.md`.
 
 ---
 

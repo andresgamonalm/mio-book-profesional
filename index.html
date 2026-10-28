@@ -5,6 +5,25 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="googlebot" content="noindex, nofollow">
 <title>Andrés Gamonal — Brandformance Lab</title>
+<meta name="description" content="Book profesional de Andrés Gamonal: más de 15 años en marketing, marca y performance digital en LATAM. Casos, resultados, piezas y contacto.">
+<meta name="theme-color" content="#040764">
+<link rel="canonical" href="https://book.gamonal.app/">
+<!-- Ícono de la pestaña (favicon oficial Gamonal) -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="imagenes/icono-gamonal-192.png">
+<link rel="apple-touch-icon" href="imagenes/icono-apple.png">
+<!-- Vista previa al compartir el enlace (WhatsApp, LinkedIn, correo). La imagen está en imagenes/imagen-compartir.jpg -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Andrés Gamonal">
+<meta property="og:locale" content="es_LA">
+<meta property="og:url" content="https://book.gamonal.app/">
+<meta property="og:title" content="Andrés Gamonal — Book profesional">
+<meta property="og:description" content="Marketing &amp; Communications · LATAM. Más de 15 años en marca, performance digital y publicidad. Casos, resultados y contacto.">
+<meta property="og:image" content="https://book.gamonal.app/imagenes/imagen-compartir.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Andrés Gamonal — Book profesional · Marketing &amp; Communications · LATAM">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
@@ -39,8 +58,12 @@
 
   /* ── NAV (solo logo, sin menú) ─────────────────── */
   .nav{position:sticky;top:0;left:0;right:0;z-index:80;background:#fff;border-bottom:1px solid var(--line);width:100%}
-  .nav-row{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:flex-start;gap:12px}
+  .nav-row{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
   .nav-logo img{height:48px;width:auto;display:block}
+  .nav-cv{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;background:var(--navy);color:#fff;border-radius:999px;font-size:14px;font-weight:500;white-space:nowrap;transition:background .2s}
+  .nav-cv:hover{background:var(--blue)}
+  .nav-cv svg{width:16px;height:16px;flex-shrink:0}
+  @media(max-width:380px){.nav-logo img{height:40px}.nav-cv{padding:0 16px}}
 
   /* ── FAB lateral SOLO cuando hay espacio (>1400px) — afuera del contenido ─────── */
   .fab{display:none}
@@ -99,12 +122,13 @@
   .stat .v sup{font-size:.62em;color:var(--navy);font-weight:900;margin-left:3px;top:-.25em}
   .stat .l{font-size:12px;color:var(--soft);font-weight:500;margin-top:4px;line-height:1.3}
   @media(max-width:880px){
-    .stats-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+    .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
     .stat{padding:16px 18px;gap:12px}
     .stat-icon{width:40px;height:40px}
     .stat-icon svg{width:20px;height:20px}
     .stat .v{font-size:22px}
   }
+  @media(max-width:360px){.stat{padding:14px 12px;gap:10px}}
 
   /* ── DISCIPLINAS marquee (limpia, sutil, profesional) ─── */
   .disciplines{padding:18px 0;background:#fff;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -121,6 +145,8 @@
   /* ── ABOUT (texto ancho usando laterales) ── */
   .about{padding:104px 0;background:#fff}
   .about-head{margin-bottom:48px;text-align:center}
+  .about-foto{width:148px;height:148px;border-radius:50%;object-fit:cover;margin:0 auto 20px;background:var(--bg)}
+  @media(max-width:780px){.about-foto{width:120px;height:120px}}
   .about-head .kicker{display:inline-block;padding:5px 14px;background:rgba(0,113,206,.10);color:var(--blue);font-size:12px;font-weight:700;border-radius:999px;margin-bottom:14px}
   .about-head h2{font-size:clamp(36px,5vw,56px);font-weight:900;line-height:1;margin:0;color:var(--ink)}
   .about-body{max-width:980px;margin:0 auto;padding:0 24px;font-size:clamp(16px,1.7vw,19px);line-height:1.3;color:var(--ink)}
@@ -155,7 +181,11 @@
 
   /* ── CASE ────────────────────────────── */
   .case{padding:96px 0;border-bottom:1px solid var(--line)}
-  .case:nth-of-type(even){background:var(--bg)}
+  /* Fondos alternados: el Caso 01 parte en blanco para no fundirse con "Marcas" (gris) */
+  .case:nth-of-type(odd){background:var(--bg)}
+  /* En los casos de fondo blanco, las tarjetas van en gris para separarse del fondo */
+  .case:nth-of-type(even) .kpi,.case:nth-of-type(even) .doc,.case:nth-of-type(even) .aud,.case:nth-of-type(even) .flags a{background:var(--bg)}
+  .case:nth-of-type(even) .flags a:hover{background:var(--navy)}
   .case-banner{max-width:var(--max);margin:0 auto 32px;padding:0 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
   .case-banner .brand-l{flex-shrink:0;width:72px;height:72px;border-radius:16px;background:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);position:relative}
   .case-banner .brand-l::before{content:attr(data-fb);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:14px;letter-spacing:.3px;text-align:center;padding:4px;line-height:1.1}
@@ -171,6 +201,8 @@
   .brand-card .logo.radar::before,.case-banner .brand-l.radar::before{content:none}
   .brand-card .logo.radar .radar-logo{width:auto;height:auto;max-width:84%;max-height:62%;object-fit:contain;position:relative;z-index:2}
   .case-banner .brand-l.radar .radar-logo{width:auto;height:auto;max-width:82%;max-height:60%;object-fit:contain;position:relative;z-index:2}
+  /* Respaldo si el logo de Radar no carga: muestra el nombre, igual que las demás marcas */
+  .brand-card .logo.radar.sin-logo::before,.case-banner .brand-l.radar.sin-logo::before{content:attr(data-fb)}
   .case-banner .meta-l{flex:1;min-width:0}
   .case-num{display:inline-flex;align-items:center;gap:12px;padding:4px 12px;background:rgba(0,113,206,.10);color:var(--blue);font-size:11px;font-weight:700;border-radius:999px;margin-bottom:10px}
   .case-num .yr{color:var(--ink);font-weight:500}
@@ -202,6 +234,7 @@
   .doc .tag{position:absolute;bottom:4px;left:4px;background:#fff;color:var(--navy);font-size:9px;font-weight:700;padding:2px 5px;border-radius:3px}
   .doc h5{font-size:13.5px;font-weight:500;line-height:1.4;margin:0 0 4px;color:var(--ink)}
   .doc .more{font-size:11.5px;color:var(--blue);font-weight:600}
+  .doc .more.pendiente{color:var(--soft);font-weight:500}
   @media(max-width:780px){.docs{grid-template-columns:1fr}}
 
   /* Videos */
@@ -283,12 +316,44 @@
   .ctap:hover{background:var(--blue);transform:translateY(-2px)}
   .ctas{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:230px;padding:15px 28px;background:#fff;color:var(--ink);border-radius:999px;font-weight:500;font-size:14.5px;border:1px solid var(--line);transition:all .2s}
   .ctas:hover{border-color:var(--navy);transform:translateY(-2px)}
+  .close-datos{margin-top:24px;display:flex;justify-content:center;flex-wrap:wrap;gap:0 8px;font-size:14px}
+  .close-datos a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:var(--navy);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+  .close-datos a:hover{color:var(--blue)}
+
+  /* ── FORMACIÓN Y CREDENCIALES (fondo azul, tarjetas blancas) ─── */
+  .formacion{padding:96px 0;background:var(--navy)}
+  .formacion .section-head .kicker{background:var(--yellow);color:var(--navy)}
+  .formacion .section-head h2{color:#fff}
+  .form-grid{max-width:var(--max);margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .form-card{background:#fff;border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;gap:20px}
+  .form-top{display:flex;align-items:center;gap:14px}
+  .form-top h3{margin:0;font-size:20px;font-weight:700;color:var(--ink);line-height:1.2}
+  .form-lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+  .form-lista li{display:flex;flex-direction:column;gap:3px}
+  .form-lista b{font-size:14.5px;font-weight:500;color:var(--ink);line-height:1.35}
+  .form-lista span{font-size:13px;color:var(--soft);line-height:1.4}
+  .form-link{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;color:var(--blue);font-weight:600;font-size:14px}
+  .form-link:hover{text-decoration:underline;text-underline-offset:3px}
+  @media(max-width:880px){.form-grid{grid-template-columns:1fr;gap:12px}.formacion{padding:72px 0}}
+
+  /* ── ACCESIBILIDAD ─── */
+  /* Contorno visible al navegar con teclado */
+  a:focus-visible,button:focus-visible{outline:3px solid #378CE3;outline-offset:3px}
+  /* Si la persona pidió reducir el movimiento en su sistema, se apagan las animaciones */
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .disc-track,.cert-logos-track{animation:none}
+    .vmodal.open{animation:none}
+  }
 
 
   footer{padding:24px 0;background:var(--navy);color:rgba(255,255,255,.55);font-size:13px;text-align:center}
   footer a{color:var(--cyan);text-decoration:none}
   footer a:hover{text-decoration:underline}
 </style>
+<!-- Si el navegador no ejecuta JavaScript, el contenido se muestra igual (sin animación de entrada) -->
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body id="top">
 
@@ -304,15 +369,22 @@
         class="l"  →  la etiqueta de abajo (ej. Share of voice)
     Cambia solo el número y la etiqueta.
   • No toques la sección <style> (colores y diseño) ni la VENTANA DE VIDEO.
+  • CV: el enlace aparece en 3 lugares (menú superior, barra lateral y
+    cierre). Al cambiar el CV, busca "CV-Andr" y reemplaza los 3.
+  • FORMACIÓN, CERTIFICACIONES, GREMIOS E IDIOMAS: sección
+    "FORMACIÓN Y CREDENCIALES", antes del cierre.
+  • VISTA PREVIA AL COMPARTIR (WhatsApp/LinkedIn): textos en las líneas
+    og: del <head>; imagen en la carpeta imagenes/imagen-compartir.jpg.
   • Para publicar: sube este archivo al repositorio de GitHub y
     Cloudflare actualiza book.gamonal.app automáticamente.
 -->
 
 
-<!-- ═══════════════ MENÚ SUPERIOR (logo) ═══════════════ -->
+<!-- ═══════════════ MENÚ SUPERIOR (logo + botón Descargar CV) ═══════════════ -->
 <nav class="nav">
   <div class="nav-row">
     <a class="nav-logo" href="#top"><img src="https://andresgamonal.com/wp-content/uploads/2025/12/Logo-Gamonal-Azul-Rey-1.png" alt="Gamonal"></a>
+    <a class="nav-cv" href="https://pub-c1b706af8d4d48cba7aaaf8b57529b2a.r2.dev/CV/CV-Andr%C3%A9s-Gamonal-Julio-2026.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>Descargar CV</a>
   </div>
 </nav>
 
@@ -320,7 +392,7 @@
 <div class="fab">
   <a href="https://wa.me/525531333539" target="_blank" aria-label="WhatsApp" class=""><svg viewBox="0 0 24 24" fill="currentColor" class=""><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-1 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5 0 1.5 1.1 2.9 1.2 3.1.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5l-.8 4 4-.8c1.4.8 3 1.2 4.5 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z" class=""></path></svg></a>
   <a href="mailto:hola@andresgamonal.com?subject=Oportunidad laboral" aria-label="Correo" class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class=""><rect x="3" y="5" width="18" height="14" rx="2" class=""></rect><path d="M3 7l9 6 9-6" class=""></path></svg></a>
-  <a href="http://www.linkedin.com/in/andresgamonal" target="_blank" aria-label="LinkedIn" class=""><svg viewBox="0 0 24 24" fill="currentColor" class=""><path d="M20.4 20.4h-3.5V15c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.5H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 110-4.1 2.1 2.1 0 010 4.1zm1.8 13h-3.6V9h3.6v11.4z"></path></svg></a>
+  <a href="https://www.linkedin.com/in/andresgamonal" target="_blank" aria-label="LinkedIn" class=""><svg viewBox="0 0 24 24" fill="currentColor" class=""><path d="M20.4 20.4h-3.5V15c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.5H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 110-4.1 2.1 2.1 0 010 4.1zm1.8 13h-3.6V9h3.6v11.4z"></path></svg></a>
   <a href="https://pub-c1b706af8d4d48cba7aaaf8b57529b2a.r2.dev/CV/CV-Andr%C3%A9s-Gamonal-Julio-2026.pdf" target="_blank" aria-label="CV" class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class=""><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" class=""></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg></a>
 </div>
 
@@ -333,7 +405,7 @@
       <div class="slide slide-1">
         <div class="slide-wrap">
           <div class="">
-            <span class="slide-meta"><span class="dot"></span>Disponible · Q3 2026</span>
+            <span class="slide-meta"><span class="dot"></span>CDMX, México · Abierto a reubicación</span>
             <h1 class="">Bienvenido a mi<br>espacio laboral</h1>
             <p class="lead">Este espacio está pensado y desarrollado para que puedas conocer mi oferta de valor profesional, a través de algunos proyectos, estrategias e indicadores que están a tu disposición.</p>
             <a class="slide-cta" href="#" data-video="rW8XFN3lRM8"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg> Ver video</a>
@@ -408,6 +480,7 @@
 <!-- ═══════════════ SOBRE MÍ (texto de presentación) ═══════════════ -->
 <section class="about" id="about">
   <div class="about-head reveal">
+    <img class="about-foto" src="imagenes/retrato-andres-gamonal.webp" alt="Andrés Gamonal" width="148" height="148">
     <span class="kicker">Sobre mí</span>
     <h2 class="">Marketing integrado al negocio</h2>
   </div>
@@ -426,7 +499,7 @@
     <h2>Las marcas donde he trabajado</h2>
   </div>
   <div class="brand-grid">
-    <a class="brand-card reveal d1" href="#c1"><div class="logo radar"><img class="radar-logo" src="https://pub-38d62415007c40b4a340ba6c07e74cca.r2.dev/logo-radar/radar-logotipo-blanco.png" alt="Radar"></div><div class="yr">2026 — Hoy</div><div class="nm">Somos Radar</div><div class="rl">Marketing &amp; Communications Lead</div></a>
+    <a class="brand-card reveal d1" href="#c1"><div class="logo radar" data-fb="RADAR"><img class="radar-logo" src="https://pub-38d62415007c40b4a340ba6c07e74cca.r2.dev/logo-radar/radar-logotipo-blanco.png" alt="Radar" onerror="this.parentNode.classList.add('sin-logo');this.remove()"></div><div class="yr">2026 — Hoy</div><div class="nm">Somos Radar</div><div class="rl">Marketing &amp; Communications Lead</div></a>
     <a class="brand-card reveal d2" href="#c2"><div class="logo bmi-bg" data-fb="BMI"><img src="https://andresgamonal.com/wp-content/uploads/2025/11/5-Favicn-BMISeguros.png" alt="" onerror="this.remove()"></div><div class="yr">2024 — 2025</div><div class="nm">BMI Headquarters</div><div class="rl">Corporate Marketing Manager</div></a>
     <a class="brand-card reveal d3" href="#c3"><div class="logo libertyandes-bg" data-fb="LIBERTY"><img src="https://andresgamonal.com/wp-content/uploads/2025/11/4-Favicn-Liberty-Andes.png" alt="" onerror="this.remove()"></div><div class="yr">2020 — 2024</div><div class="nm">Liberty Andes</div><div class="rl">Regional Marketing Director · Team Leader</div></a>
     <a class="brand-card reveal d4" href="#c4"><div class="logo libertychile-bg" data-fb="LIBERTY"><img src="https://andresgamonal.com/wp-content/uploads/2025/11/3-Favicn-Liberty-Chile.png" alt="" onerror="this.remove()"></div><div class="yr">2018 — 2020</div><div class="nm">Liberty Chile</div><div class="rl">Brand &amp; Digital Communication Manager</div></a>
@@ -438,7 +511,7 @@
 <!-- ═══════════════ CASO 01 · SOMOS RADAR ═══════════════ -->
 <section class="case" id="c1">
   <div class="case-banner reveal">
-    <div class="brand-l radar"><img class="radar-logo" src="https://pub-38d62415007c40b4a340ba6c07e74cca.r2.dev/logo-radar/radar-logotipo-blanco.png" alt="Radar"></div>
+    <div class="brand-l radar" data-fb="RADAR"><img class="radar-logo" src="https://pub-38d62415007c40b4a340ba6c07e74cca.r2.dev/logo-radar/radar-logotipo-blanco.png" alt="Radar" onerror="this.parentNode.classList.add('sin-logo');this.remove()"></div>
     <div class="meta-l">
       <div class="case-num">CASO 01 <span class="yr">· 2026 — Actualidad · MX · CL</span></div>
       <h2 class="">Somos Radar</h2>
@@ -449,9 +522,9 @@
   <p class="summary reveal">Construir y liderar la estrategia de marketing B2B de Radar, conectando objetivos comerciales, posicionamiento corporativo, vocerías ejecutivas, campañas digitales, research y soluciones propias desarrolladas con inteligencia artificial, para fortalecer la generación de demanda, la visibilidad de la compañía y la eficiencia de la gestión de marketing.</p>
   <div class="res-head reveal"><span class="bar"></span>Entregables destacados<span class="count">3 soluciones</span></div>
   <div class="docs">
-    <div class="doc reveal d1"><div class="thumb soon">Pronto</div><div class=""><h5 class="">Power Research</h5><span class="more">Ver más</span></div></div>
-    <div class="doc reveal d2"><div class="thumb soon">Pronto</div><div><h5>Easy Web Builder</h5><span class="more">Ver más</span></div></div>
-    <div class="doc reveal d3"><div class="thumb soon">Pronto</div><div class=""><h5 class="">News one click</h5><span class="more">Ver más</span></div></div>
+    <div class="doc reveal d1"><div class="thumb soon">Pronto</div><div class=""><h5 class="">Power Research</h5><span class="more pendiente">En preparación</span></div></div>
+    <div class="doc reveal d2"><div class="thumb soon">Pronto</div><div><h5>Easy Web Builder</h5><span class="more pendiente">En preparación</span></div></div>
+    <div class="doc reveal d3"><div class="thumb soon">Pronto</div><div class=""><h5 class="">News one click</h5><span class="more pendiente">En preparación</span></div></div>
   </div>
   <div class="back"><a href="#marcas">← Volver a marcas</a></div>
 </section>
@@ -470,9 +543,9 @@
   <p class="summary reveal">Construir una estrategia integral de marketing a partir del diagnóstico del área, integrando objetivos cuantitativos, métricas y research, campañas digitales y tradicionales estructuradas, un ecosistema de medición y un plan de incentivos comerciales orientado a venta, retención y crecimiento del negocio.</p>
   <div class="res-head reveal"><span class="bar"></span>Documentos<span class="count">3 PDFs</span></div>
   <div class="docs">
-    <a class="doc reveal d1" href="https://cdn-gamonal.andresgamonal.com/1.0-gamonal-estudio-contenido.pdf" target="_blank"><div class="thumb"><img src="https://andresgamonal.com/wp-content/uploads/2025/11/fa17367f555ccce76b7cb138b2e695f8798a8547c0d20d525a7c53d1b5c659cecb081674a29e42452ddb4855bf1a5a67391e9a96afda159c919a63_1280.jpg"><span class="tag">PDF</span></div><div><h5>Estudio de efectividad del contenido digital</h5><span class="more">Abrir documento ↗</span></div></a>
-    <a class="doc reveal d2" href="https://cdn-gamonal.andresgamonal.com/1.1-gamonal-ecosistema-digital.pdf" target="_blank"><div class="thumb"><img src="https://andresgamonal.com/wp-content/uploads/2025/11/inventory-management-statistics.jpg"><span class="tag">PDF</span></div><div><h5>Ecosistema de indicadores y estudios de mercado</h5><span class="more">Abrir documento ↗</span></div></a>
-    <a class="doc reveal d3" href="https://cdn-gamonal.andresgamonal.com/1.2-gamonal-metodologia-campa%C3%B1as.pdf" target="_blank"><div class="thumb"><img src="https://andresgamonal.com/wp-content/uploads/2025/11/marketing-strategy.jpg"><span class="tag">PDF</span></div><div><h5>Metodología de campañas de publicidad digital</h5><span class="more">Abrir documento ↗</span></div></a>
+    <a class="doc reveal d1" href="https://cdn-gamonal.andresgamonal.com/1.0-gamonal-estudio-contenido.pdf" target="_blank"><div class="thumb"><img src="https://andresgamonal.com/wp-content/uploads/2025/11/fa17367f555ccce76b7cb138b2e695f8798a8547c0d20d525a7c53d1b5c659cecb081674a29e42452ddb4855bf1a5a67391e9a96afda159c919a63_1280.jpg" alt=""><span class="tag">PDF</span></div><div><h5>Estudio de efectividad del contenido digital</h5><span class="more">Abrir documento ↗</span></div></a>
+    <a class="doc reveal d2" href="https://cdn-gamonal.andresgamonal.com/1.1-gamonal-ecosistema-digital.pdf" target="_blank"><div class="thumb"><img src="https://andresgamonal.com/wp-content/uploads/2025/11/inventory-management-statistics.jpg" alt=""><span class="tag">PDF</span></div><div><h5>Ecosistema de indicadores y estudios de mercado</h5><span class="more">Abrir documento ↗</span></div></a>
+    <a class="doc reveal d3" href="https://cdn-gamonal.andresgamonal.com/1.2-gamonal-metodologia-campa%C3%B1as.pdf" target="_blank"><div class="thumb"><img src="https://andresgamonal.com/wp-content/uploads/2025/11/marketing-strategy.jpg" alt=""><span class="tag">PDF</span></div><div><h5>Metodología de campañas de publicidad digital</h5><span class="more">Abrir documento ↗</span></div></a>
   </div>
   <div class="res-head reveal"><span class="bar"></span>Infografías de mercado<span class="count">4 países</span></div>
   <div class="flags reveal">
@@ -489,7 +562,7 @@
   <div class="case-banner reveal">
     <div class="brand-l libertyandes-bg" data-fb="LIBERTY"><img src="https://andresgamonal.com/wp-content/uploads/2025/11/4-Favicn-Liberty-Andes.png" alt="" onerror="this.remove()" class=""></div>
     <div class="meta-l">
-      <div class="case-num">CASO 03 <span class="yr">· 2020 — 2024 · CO · EC · DO</span></div>
+      <div class="case-num">CASO 03 <span class="yr">· 2020 — 2024 · CO · CL · EC</span></div>
       <h2 class="">Liberty Seguros Andes</h2>
       <p class="role">Regional Marketing Director · Team Leader</p>
     </div>
@@ -608,9 +681,50 @@
   <div class="vids">
     <a class="vid reveal d1" href="#" data-video="6f98qMrhhnw"><img src="https://i.ytimg.com/vi/6f98qMrhhnw/hqdefault.jpg" alt=""><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div><div class="cap">Sanodelucas Personas (1/12)</div><div class="yt">▶ YouTube</div></a>
     <a class="vid reveal d2" href="#" data-video="df1NKs_FD3o"><img src="https://i.ytimg.com/vi/df1NKs_FD3o/hqdefault.jpg" alt=""><div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div><div class="cap">Sanodelucas Pyme</div><div class="yt">▶ YouTube</div></a>
-    <a class="vid reveal d3" href="https://cdn-santander.andresgamonal.com/5.0-santander-sanodelucas-guia.pdf" target="_blank"><img src="https://andresgamonal.com/wp-content/uploads/2025/12/SNDL-Portada-2.png.webp" alt=""><div class="play"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"></path></svg></div><div class="cap">Guía de comportamiento financiero</div><div class="yt">📕 PDF</div></a>
+    <a class="vid reveal d3" href="https://cdn-santander.andresgamonal.com/5.0-santander-sanodelucas-guia.pdf" target="_blank"><img src="https://andresgamonal.com/wp-content/uploads/2025/12/SNDL-Portada-2.png.webp" alt=""><div class="play"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"></path></svg></div><div class="cap">Guía de comportamiento financiero</div><div class="yt">PDF</div></a>
   </div>
   <div class="back"><a href="#marcas">← Volver a marcas</a></div>
+</section>
+
+<!-- ═══════════════ FORMACIÓN Y CREDENCIALES ═══════════════
+     Datos tomados del CV (2026). Cada línea: <b>título</b> + <span>institución · año</span> -->
+<section class="formacion" id="formacion">
+  <div class="section-head reveal">
+    <span class="kicker">Formación</span>
+    <h2>Formación y credenciales</h2>
+  </div>
+  <div class="form-grid">
+    <!-- ▼ EDUCACIÓN -->
+    <div class="form-card reveal d1">
+      <div class="form-top"><div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path></svg></div><h3>Educación</h3></div>
+      <ul class="form-lista">
+        <li><b>Periodismo y Licenciatura en Comunicación Social</b><span>U. de Los Andes / U. Internacional SEK · 2005&nbsp;—&nbsp;2010</span></li>
+        <li><b>Diplomado en Marketing Digital y Comercio Electrónico</b><span>Universidad de Chile, Escuela de Negocios · 2014</span></li>
+        <li><b>Diplomado en Marketing y RSE</b><span>Universidad Católica de Chile · 2013</span></li>
+        <li><b>Diplomado en Dirección de Marketing</b><span>Universidad de Chile, Escuela de Negocios · 2012</span></li>
+      </ul>
+    </div>
+    <!-- ▼ CERTIFICACIONES -->
+    <div class="form-card reveal d2">
+      <div class="form-top"><div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg></div><h3>Certificaciones</h3></div>
+      <ul class="form-lista">
+        <li><b>Google Analytics 4 · Google Ads · Google Display</b><span>Google Skillshop · 2025&nbsp;—&nbsp;2026</span></li>
+        <li><b>Estrategia de Marketing · Fundamentos de Marketing</b><span>LinkedIn Labs · 2025&nbsp;—&nbsp;2027</span></li>
+        <li><b>Certificado en Inbound</b><span>HubSpot · 2025&nbsp;—&nbsp;2027</span></li>
+      </ul>
+      <a class="form-link" href="https://pub-c1b706af8d4d48cba7aaaf8b57529b2a.r2.dev/certificaciones/Certificaciones-2025-2027.pdf" target="_blank">Ver certificados (PDF) ↗</a>
+    </div>
+    <!-- ▼ GREMIOS, JURADO E IDIOMAS -->
+    <div class="form-card reveal d3">
+      <div class="form-top"><div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg></div><h3>Gremios e idiomas</h3></div>
+      <ul class="form-lista">
+        <li><b>Jurado Effie Awards Colombia</b><span>Categoría Servicios y Nuevos Productos · 2022&nbsp;—&nbsp;2023</span></li>
+        <li><b>Comité de Medios y Digital</b><span>ANDA, Asociación Nacional de Avisadores de Chile · 2020&nbsp;—&nbsp;2023</span></li>
+        <li><b>Comité de Comunicaciones</b><span>ANDACOL, Asociación Nacional de Avisadores de Colombia · 2021&nbsp;—&nbsp;2023</span></li>
+        <li><b>Idiomas</b><span>Español nativo · Inglés B1 (British Council, en curso)</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- ═══════ VENTANA DE VIDEO (no editar) ═══════ -->
@@ -618,7 +732,7 @@
   <div class="vmodal-bg" data-close=""></div>
   <div class="vmodal-inner">
     <button class="vmodal-x" data-close="" aria-label="Cerrar">✕</button>
-    <div class="vmodal-frame"><iframe id="vmodal-iframe" src="" allowfullscreen="" allow="autoplay; encrypted-media; picture-in-picture"></iframe></div>
+    <div class="vmodal-frame"><iframe id="vmodal-iframe" src="" title="Video de YouTube" allowfullscreen="" allow="autoplay; encrypted-media; picture-in-picture"></iframe></div>
   </div>
 </div>
 
@@ -631,6 +745,12 @@
     <div class="close-ctas">
       <a class="ctap reveal d3" href="mailto:hola@andresgamonal.com?subject=Conversemos">Escríbeme un correo</a>
       <a class="ctas reveal d4" href="https://wa.me/525531333539" target="_blank">Háblame por WhatsApp</a>
+    </div>
+    <!-- ▼ Datos de contacto visibles (correo, LinkedIn y CV) -->
+    <div class="close-datos reveal d5">
+      <a href="mailto:hola@andresgamonal.com">hola@andresgamonal.com</a>
+      <a href="https://www.linkedin.com/in/andresgamonal" target="_blank">Perfil de LinkedIn</a>
+      <a href="https://pub-c1b706af8d4d48cba7aaaf8b57529b2a.r2.dev/CV/CV-Andr%C3%A9s-Gamonal-Julio-2026.pdf" target="_blank">Descargar CV</a>
     </div>
   </div>
 </section>
@@ -647,19 +767,23 @@
   // Modal de video universal
   const vmodal=document.getElementById('vmodal');
   const vframe=document.getElementById('vmodal-iframe');
+  let lastFocus=null; // para devolver el foco al botón que abrió el video
   function openVideo(id){
     // Cierra el drawer u otra sección con :target si está abierta
     if(location.hash) history.replaceState(null,'',location.pathname+location.search);
+    lastFocus=document.activeElement;
     vframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
     vmodal.classList.add('open');
     vmodal.setAttribute('aria-hidden','false');
     document.body.style.overflow='hidden';
+    vmodal.querySelector('.vmodal-x').focus();
   }
   function closeVideo(){
     vframe.src='';
     vmodal.classList.remove('open');
     vmodal.setAttribute('aria-hidden','true');
     document.body.style.overflow='';
+    if(lastFocus) lastFocus.focus();
   }
   document.querySelectorAll('[data-video]').forEach(el=>{
     el.addEventListener('click',e=>{

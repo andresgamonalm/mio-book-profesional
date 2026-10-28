@@ -1,0 +1,26 @@
+# ─────────────────────────────────────────────────────────────────────
+# Cabeceras de Cloudflare Pages · ARCHIVO TÉCNICO: no lo edites.
+# Cloudflare lo lee al publicar y lo aplica a cada respuesta del sitio.
+#
+# · X-Robots-Tag: el book NO aparece en Google (refuerza el "noindex"
+#   del index.html, también en la dirección .pages.dev).
+# · No se bloquea el sitio con robots.txt a propósito: eso impediría
+#   la vista previa del enlace en LinkedIn y no evita la indexación.
+# · Referrer-Policy: se envía el origen; YouTube lo exige para que los
+#   videos incrustados se reproduzcan. No cambiarlo a "no-referrer".
+# · Sin X-Frame-Options: el editor de contenido podría mostrar el book
+#   dentro de una vista previa.
+# ─────────────────────────────────────────────────────────────────────
+
+/*
+  X-Robots-Tag: noindex, nofollow
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+
+# Imágenes propias y favicon: el navegador las guarda 1 semana
+/imagenes/*
+  Cache-Control: public, max-age=604800
+
+/favicon.ico
+  Cache-Control: public, max-age=604800
