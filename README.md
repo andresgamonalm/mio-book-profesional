@@ -22,12 +22,12 @@ Cambia solo lo que está entre las etiquetas, sin tocarlas.
 
 | Quiero cambiar | Busco |
 |---|---|
-| La píldora de la portada (ciudad y disponibilidad) | `Abierto a reubicación` |
+| La píldora de la portada (cargo actual) | `Actualmente en` |
 | El texto de bienvenida | `Bienvenido a mi` |
 | La lámina de certificaciones de la portada | `Certificaciones<br>digitales` |
 | El texto de "Sobre mí" | `Trabajo el marketing` |
 | La foto de "Sobre mí" | `retrato-andres-gamonal` |
-| Una marca o un caso | `CASO 01` … `CASO 06` |
+| Una marca o un caso | `CASO 01` … `CASO 07` |
 | Las cifras de resultados de un caso | `TARJETAS DE RESULTADOS` |
 | Formación, certificaciones, gremios o idiomas | `FORMACIÓN Y CREDENCIALES` |
 | El CV (aparece en 3 lugares: menú, barra lateral y cierre) | `CV-Andr` |
@@ -39,10 +39,10 @@ Cambia solo lo que está entre las etiquetas, sin tocarlas.
 1. Menú superior: logo y botón **Descargar CV**, visible en todas las pantallas.
 2. Barra lateral flotante (solo en pantallas muy anchas): WhatsApp, correo, LinkedIn y CV.
 3. Portada en carrusel: bienvenida con video y certificaciones digitales.
-4. Cifras: 15+ años, 6 mercados, 5 compañías y Effie de Bronce.
+4. Cifras: 17+ años, 6 mercados, 6 compañías y Effie de Bronce.
 5. Disciplinas en cinta móvil.
 6. Sobre mí, con retrato.
-7. Marcas (6) y un caso por marca: resumen, resultados, documentos, videos y audios.
+7. Marcas (7) y un caso por marca: resumen, resultados, documentos, videos y audios. El orden va de la más reciente (Zurich) a la más antigua (Santander).
 8. Formación y credenciales: educación, certificaciones, gremios, jurado Effie e idiomas.
 9. Cierre con correo, WhatsApp, LinkedIn y CV.
 
@@ -66,7 +66,7 @@ Las otras ramas del repositorio generan una **vista previa** con su propia direc
 
 - **Reemplazar una imagen de `imagenes/`:** usa un nombre nuevo (por ejemplo `retrato-andres-gamonal-2.webp`) y cámbialo en `index.html`. Los navegadores guardan esas imágenes una semana.
 - **Vista previa al compartir:** WhatsApp y LinkedIn guardan la vista previa varios días. Para refrescarla en LinkedIn usa https://www.linkedin.com/post-inspector/.
-- **Archivos externos:** las imágenes de marcas y casos están en `andresgamonal.com` y los PDF y audios en sus subdominios `cdn-*`. El CV, los certificados y el logo de Radar están en Cloudflare R2 (`pub-…r2.dev`). Los videos se reproducen desde YouTube (`youtube-nocookie.com`).
+- **Archivos externos:** las imágenes de marcas y casos están en `andresgamonal.com` y los PDF y audios en sus subdominios `cdn-*`. El CV, los certificados y el logo de Radar están en Cloudflare R2 (`pub-…r2.dev`). El ícono de Zurich está en `imagenes/logo-zurich.png` (isotipo oficial). Los videos se reproducen desde YouTube (`youtube-nocookie.com`).
 - **Diseño:** paleta Gamonal (azul `#040764`, azul secundario `#1C73CB`, turquesa `#20B6B6`, amarillo `#FCE865`, gris `#3B3B3B`) y tipografía Roboto. Las decisiones vigentes están en `DECISIONES-VISUALES.md`.
 
 ---
